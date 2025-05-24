@@ -285,4 +285,12 @@ def main():
     application.run_polling()
 
 if __name__ == '__main__':
-    main()
+    try:
+        print("✅ Bot iniciado. Presiona Ctrl+C para detenerlo.")
+        main()
+    except KeyboardInterrupt:
+        print("\n🛑 Bot detenido por el usuario (Ctrl+C).")
+    except Exception as e:
+        print(f"⚠️ Se produjo un error inesperado: {e}")
+    finally:
+        print("🔒 Finalizando procesos... Limpieza completada.")
